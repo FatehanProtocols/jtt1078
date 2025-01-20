@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/gb28181"
-	"github.com/lkmio/lkm/log"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/gb28181"
+	"github.com/FatehanProtocols/jtt1078/log"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"net"
 	"net/http"
 	"strings"

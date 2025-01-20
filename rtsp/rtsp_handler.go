@@ -3,8 +3,8 @@ package rtsp
 import (
 	"fmt"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/log"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/log"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"net/http"
 	"net/textproto"
 	"net/url"

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/lkmio/avformat/collections"
 	"github.com/lkmio/avformat/transport"
-	"github.com/lkmio/lkm/log"
+	"github.com/FatehanProtocols/jtt1078/log"
 	"net"
 	"net/url"
 	"sync"
@@ -13,7 +13,7 @@ import (
 
 	"github.com/lkmio/avformat/stream"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/transcode"
+	"github.com/FatehanProtocols/jtt1078/transcode"
 )
 
 var (

@@ -1,7 +1,7 @@
 package record
 
 import (
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"os"
 	"path/filepath"
 	"time"

@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"github.com/lkmio/avformat/libflv"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/rtmp"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/rtmp"
+	"github.com/FatehanProtocols/jtt1078/stream"
 )
 
 type TransStream struct {

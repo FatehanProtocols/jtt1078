@@ -3,8 +3,8 @@ package rtmp
 import (
 	"github.com/lkmio/avformat/librtmp"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/log"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/log"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"net"
 )
 

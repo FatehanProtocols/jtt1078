@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
-	"github.com/lkmio/lkm/log"
+	"github.com/FatehanProtocols/jtt1078/log"
 	"go.uber.org/zap/zapcore"
 	"net"
 	"os"

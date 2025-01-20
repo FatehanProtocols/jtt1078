@@ -2,7 +2,7 @@ package gb28181
 
 import (
 	"github.com/lkmio/avformat/transport"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"net"
 )
 

@@ -3,8 +3,8 @@ package gb28181
 import (
 	"encoding/hex"
 	"github.com/lkmio/avformat/transport"
-	"github.com/lkmio/lkm/log"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/log"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"github.com/pion/rtp"
 	"net"
 )

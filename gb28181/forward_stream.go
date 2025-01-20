@@ -2,7 +2,7 @@ package gb28181
 
 import (
 	"encoding/binary"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/stream"
 )
 
 // ForwardStream 国标级联转发流, 下级推什么, 就向上级发什么.

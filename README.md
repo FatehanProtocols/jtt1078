@@ -12,12 +12,12 @@
 
 ## 编译
 
-在使用之前，建议先阅读[LKM启动配置文件参数说明](https://github.com/lkmio/lkm/wiki/Startup-Parameters)。如果你想修改源码，推荐阅读[LKM源码分析](https://github.com/lkmio/lkm/wiki/Source-Code-Analysis)。
+在使用之前，建议先阅读[LKM启动配置文件参数说明](https://github.com/FatehanProtocols/jtt1078/wiki/Startup-Parameters)。如果你想修改源码，推荐阅读[LKM源码分析](https://github.com/FatehanProtocols/jtt1078/wiki/Source-Code-Analysis)。
 
 ### 源码编译
 
      git clone https://github.com/lkmio/avformat.git
-     git clone https://github.com/lkmio/lkm.git
+     git clone https://github.com/FatehanProtocols/jtt1078.git
      cd lkm
      go mod tidy
      go mod vendor
@@ -59,7 +59,7 @@ ffmpeg推流示例：
 ## GB28181推流
 
 1.  [安装信令服务器](https://github.com/lkmio/gb-cms)
-2.  配置[http hooks](https://github.com/lkmio/lkm/wiki/Startup-Parameters#hook)
+2.  配置[http hooks](https://github.com/FatehanProtocols/jtt1078/wiki/Startup-Parameters#hook)
 3.  查询在线设备
 > curl -v http://localhost:9000/api/v1/device/list
 3.  使用ffplay播放

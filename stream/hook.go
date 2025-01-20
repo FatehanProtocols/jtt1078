@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/lkmio/lkm/log"
+	"github.com/FatehanProtocols/jtt1078/log"
 	"io"
 	"net/http"
 	"time"

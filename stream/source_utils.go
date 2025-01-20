@@ -6,7 +6,7 @@ import (
 	"github.com/lkmio/avformat/libavc"
 	"github.com/lkmio/avformat/libhevc"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/log"
+	"github.com/FatehanProtocols/jtt1078/log"
 	"net/url"
 	"strings"
 	"time"

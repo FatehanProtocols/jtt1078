@@ -7,7 +7,7 @@ import (
 	"github.com/lkmio/avformat/librtp"
 	"github.com/lkmio/avformat/librtsp/sdp"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"net"
 	"strconv"
 )

@@ -2,7 +2,7 @@ package rtc
 
 import (
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/stream"
 	"github.com/pion/interceptor"
 	"github.com/pion/webrtc/v3"
 	"net"

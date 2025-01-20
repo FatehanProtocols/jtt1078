@@ -2,7 +2,7 @@ package stream
 
 import (
 	"github.com/lkmio/avformat/transport"
-	"github.com/lkmio/lkm/log"
+	"github.com/FatehanProtocols/jtt1078/log"
 	"net"
 )
 

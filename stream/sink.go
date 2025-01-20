@@ -3,7 +3,7 @@ package stream
 import (
 	"fmt"
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/log"
+	"github.com/FatehanProtocols/jtt1078/log"
 	"net"
 	"net/url"
 	"sync"

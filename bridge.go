@@ -2,10 +2,10 @@ package main
 
 import (
 	"github.com/lkmio/avformat/utils"
-	"github.com/lkmio/lkm/flv"
-	"github.com/lkmio/lkm/hls"
-	"github.com/lkmio/lkm/rtsp"
-	"github.com/lkmio/lkm/stream"
+	"github.com/FatehanProtocols/jtt1078/flv"
+	"github.com/FatehanProtocols/jtt1078/hls"
+	"github.com/FatehanProtocols/jtt1078/rtsp"
+	"github.com/FatehanProtocols/jtt1078/stream"
 )
 
 // 处理不同包不能相互引用的需求
