@@ -85,10 +85,10 @@ func startApiServer(addr string) {
 	apiServer.router.HandleFunc("/{source}/{stream}.flv", filterSourceID(apiServer.onFlv, ".flv"))
 
 	if stream.AppConfig.Hls.Enable {
-		apiServer.router.HandleFunc("/{source}.m3u8", filterSourceID(apiServer.onHLS, ".m3u8"))
-		apiServer.router.HandleFunc("/{source}/{stream}.m3u8", filterSourceID(apiServer.onHLS, ".m3u8"))
-		apiServer.router.HandleFunc("/{source}.ts", filterSourceID(apiServer.onTS, ".ts"))
-		apiServer.router.HandleFunc("/{source}/{stream}.ts", filterSourceID(apiServer.onTS, ".ts"))
+		apiServer.router.HandleFunc("camera/{source}.m3u8", filterSourceID(apiServer.onHLS, ".m3u8"))
+		apiServer.router.HandleFunc("camera/{source}/{stream}.m3u8", filterSourceID(apiServer.onHLS, ".m3u8"))
+		apiServer.router.HandleFunc("camera/{source}.ts", filterSourceID(apiServer.onTS, ".ts"))
+		apiServer.router.HandleFunc("camera/{source}/{stream}.ts", filterSourceID(apiServer.onTS, ".ts"))
 	}
 
 	if stream.AppConfig.WebRtc.Enable {

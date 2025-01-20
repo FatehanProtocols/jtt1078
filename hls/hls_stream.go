@@ -246,7 +246,7 @@ func DeleteOldSegments(id string) {
 // @Params playlistLength 缓存多少个切片
 func NewTransStream(dir, m3u8Name, tsFormat, tsUrl string, segmentDuration, playlistLength int, seq int, playlistFormat *string, writer libhls.M3U8Writer) (stream.TransStream, error) {
 	// 创建文件夹
-	m3u8Path := fmt.Sprintf("%s/%s", dir, m3u8Name)
+	m3u8Path := fmt.Sprintf("camera/%s/%s", dir, m3u8Name)
 	if err := os.MkdirAll(filepath.Dir(m3u8Path), 0666); err != nil {
 		log.Sugar.Errorf("创建HLS目录失败 err: %s path: %s", err.Error(), m3u8Path)
 		return nil, err
