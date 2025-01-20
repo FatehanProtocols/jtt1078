@@ -7,6 +7,7 @@ import (
 	"github.com/FatehanProtocols/jtt1078/stream"
 	"github.com/pion/webrtc/v3"
 	"github.com/pion/webrtc/v3/pkg/media"
+	"io"
 	"time"
 )
 
@@ -72,11 +73,26 @@ func (s *Sink) StartStreaming(transStream stream.TransStream) error {
 		remoteTrack, err = webrtc.NewTrackLocalStaticSample(webrtc.RTPCodecCapability{MimeType: mimeType}, id, "pion")
 		if err != nil {
 			return err
-		} else if _, err := connection.AddTransceiverFromTrack(remoteTrack, webrtc.RTPTransceiverInit{Direction: webrtc.RTPTransceiverDirectionSendonly}); err != nil {
-			return err
-		} else if _, err = connection.AddTrack(remoteTrack); err != nil {
+		}
+
+		transceiver, err := connection.AddTransceiverFromTrack(remoteTrack, webrtc.RTPTransceiverInit{Direction: webrtc.RTPTransceiverDirectionSendonly})
+		if err != nil {
 			return err
 		}
+
+		// pion需要在外部读取rtcp包,才会处理nack包丢包重传. https://github.com/pion/interceptor/blob/e1874104865b23ba465ecc505f959daf156cc2a5/pkg/nack/responder_interceptor.go#L82
+		go func() {
+			for {
+				_, _, err := transceiver.Sender().ReadRTCP()
+				if err == nil {
+					continue
+				} else if io.EOF == err || io.ErrClosedPipe == err {
+					break
+				} else {
+					println(err.Error())
+				}
+			}
+		}()
 
 		s.tracks[index] = remoteTrack
 	}
@@ -116,12 +132,12 @@ func (s *Sink) StartStreaming(transStream stream.TransStream) error {
 }
 
 func (s *Sink) Close() {
+	s.BaseSink.Close()
+
 	if s.peer != nil {
 		s.peer.Close()
 		s.peer = nil
 	}
-
-	s.BaseSink.Close()
 }
 
 func (s *Sink) Write(index int, data [][]byte, ts int64) error {
@@ -144,5 +160,5 @@ func (s *Sink) Write(index int, data [][]byte, ts int64) error {
 }
 
 func NewSink(id stream.SinkID, sourceId string, offer string, cb func(sdp string)) stream.Sink {
-	return &Sink{stream.BaseSink{ID: id, SourceID: sourceId, Protocol: stream.TransStreamRtc, TCPStreaming: false}, offer, "", nil, nil, webrtc.ICEConnectionStateNew, cb}
+	return &Sink{stream.BaseSink{ID: id, SourceID: sourceId, State: stream.SessionStateCreated, Protocol: stream.TransStreamRtc, TCPStreaming: false}, offer, "", nil, nil, webrtc.ICEConnectionStateNew, cb}
 }
